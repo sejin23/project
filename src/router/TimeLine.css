@@ -1,0 +1,46 @@
+.timelinehead {
+    width: 100%;
+    display: flex;
+    margin-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.timelinehead div {
+    font-size: 30px;
+}
+.timelinebody {
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    overflow-y: scroll;
+    max-height: 514px;
+}
+.timelinepost {
+    text-decoration: none;
+    color: black;
+}
+.timelinetitle {
+    font-size: 35px;
+}
+.timelinehidden {
+    font-size: 35px;
+    color: white;
+}
+.timelineimages {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    padding-bottom: 10px;
+    border-bottom: 3px solid black;
+}
+.timelineimages img {
+    width: auto;
+    height: auto;
+    margin-left: 2px;
+    margin-right: 2px;
+    max-width: 24%;
+    max-height: 85px;
+}

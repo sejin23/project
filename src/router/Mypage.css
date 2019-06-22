@@ -1,0 +1,73 @@
+.mypage {
+    margin-top: 25px;
+}
+.mypageheader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 98%;
+    margin: 10px auto;
+    font-size: 30px;
+}
+.settingimg {
+    width: 25px;
+    height: 25px;
+}
+.mypagesetting-text {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 98%;
+    margin: 3px auto;
+    border-bottom: 3px solid black;
+}
+.mypagesetting-text input {
+    position: relative;
+    width: 100%;
+    height: 35px;
+    border: none;
+    font-size: 25px;
+    left: -7px;
+}
+.mypage-iconleft {
+    z-index: 2;
+    margin-left: 5px;
+}
+.mypage-iconright {
+    margin-right: 5px;
+}
+.mypagesetting-link {
+    color: black;
+    text-decoration: none;
+}
+.mypagetext {
+    width: 97%;
+    margin: 10px auto;
+    font-size: 28px;
+}
+.mypagemargin {
+    margin-top: 150px;
+}
+.mypagechoice {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 3px solid black;
+    padding-top: 10px;
+}
+.mypagemain-grey {
+    cursor: pointer;
+    color: #A4A4A4;
+}
+.mypageposting {
+    max-height: 295px;
+    overflow-y: scroll;
+}
+.mypageposting img {
+    margin: 5px;
+    width: 47%;
+    max-height: 185px;
+}

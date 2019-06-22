@@ -1,0 +1,64 @@
+.popon {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+.popoff {
+    display: none;
+}
+.popbody {
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    background-color: black;
+    left: 10%;
+    right: 10%;
+    top: 8%;
+    bottom: 15%;
+}
+.popimg {
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    width: 180px;
+    height: 180px;
+}
+.poptext {
+    color: white;
+    margin-left: 7%;
+    margin-right: 7%;
+}
+.popfont40 {
+    font-size: 42px;
+}
+.popfont15 {
+    padding-top: 8px;
+    font-size: 13px;
+    margin-bottom: 20px
+}
+.popborder {
+    border-bottom: 3px solid white;
+}
+.popclose {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    color: white;
+    bottom: 5px;
+    left: 8px;
+    width: 94%;
+}
+.popclosemsg {
+    font-size: 13px;
+}
+.popcloseimg {
+    position: absolute;
+    right: 0;
+    width: 20px;
+}
+.popcheck {
+    transform: translateY(5%);
+    border-radius: 50%;
+}

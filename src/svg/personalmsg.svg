@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="393.167" height="66" viewBox="0 0 393.167 66">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-5 {
+        fill: none;
+      }
+
+      .cls-1, .cls-2 {
+        stroke: #000;
+        stroke-width: 3px;
+      }
+
+      .cls-2 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-3 {
+        font-size: 40px;
+        font-family: SpoqaHanSans-Regular, SpoqaHanSans;
+      }
+
+      .cls-4 {
+        stroke: none;
+      }
+    </style>
+  </defs>
+  <g id="그룹_224" data-name="그룹 224" transform="translate(-87.5 -2359)">
+    <path id="패스_174" data-name="패스 174" class="cls-1" d="M0,0H393.167" transform="translate(87.5 2423.5)"/>
+    <g id="그룹_223" data-name="그룹 223" transform="translate(-2.092)">
+      <g id="그룹_54" data-name="그룹 54" transform="translate(-827.026 971.201)">
+        <g id="사각형_8" data-name="사각형 8" class="cls-2" transform="translate(925.118 1401)">
+          <rect class="cls-4" width="52.086" height="37.694"/>
+          <rect class="cls-5" x="1.5" y="1.5" width="49.086" height="34.694"/>
+        </g>
+        <path id="패스_9" data-name="패스 9" class="cls-2" d="M1241.992,1619.5c-5.963,5.3-25.038,21.208-25.038,21.208l-24.9-21.208" transform="translate(-265.884 -213.541)"/>
+      </g>
+      <text id="개인_메세지_보내기" data-name="개인 메세지 보내기" class="cls-3" transform="translate(162 2405)"><tspan x="0" y="0">개인 메세지 보내기</tspan></text>
+    </g>
+  </g>
+</svg>

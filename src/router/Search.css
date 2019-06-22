@@ -1,0 +1,42 @@
+.search {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+.searchbar {
+    height: 60px;
+    margin: auto;
+}
+.searchbarinput {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 93%;
+    margin: 25px auto;
+    padding-right: 5px;
+    border-bottom: 2px solid black;
+}
+.searchbarinput input {
+    flex: 1;
+    font-size: 24px;
+    border: none;
+}
+.searchbody {
+    width: 100%;
+    height: 592px;
+    overflow-y: scroll;
+}
+.searchmain {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 220px;
+    margin: 33px auto;
+}
+.searchnot {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 25px;
+}

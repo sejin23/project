@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="39.132" height="28.319" viewBox="0 0 39.132 28.319">
+  <defs>
+    <style>
+      .cls-1, .cls-3 {
+        fill: none;
+      }
+
+      .cls-1 {
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-width: 3px;
+      }
+
+      .cls-2 {
+        stroke: none;
+      }
+    </style>
+  </defs>
+  <g id="그룹_38" data-name="그룹 38" transform="translate(-925.118 -1401)">
+    <g id="사각형_8" data-name="사각형 8" class="cls-1" transform="translate(925.118 1401)">
+      <rect class="cls-2" width="39.132" height="28.319"/>
+      <rect class="cls-3" x="1.5" y="1.5" width="36.132" height="25.319"/>
+    </g>
+    <path id="패스_9" data-name="패스 9" class="cls-1" d="M1229.35,1619.5l-17.918,15.933-17.918-15.933" transform="translate(-266.816 -214.775)"/>
+  </g>
+</svg>

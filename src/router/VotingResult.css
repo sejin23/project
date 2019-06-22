@@ -1,0 +1,69 @@
+@font-face {
+    font-family: 'Univers-BlackExt';
+    src: url('../univers/Univers-BlackExt.otf');
+}
+.result {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow-y: scroll;
+    background-color: black;
+    padding-bottom: 80px;
+}
+.resulttitle {
+    color: white;
+}
+.resultbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: auto;
+    margin-top: 50px;
+    width: 65%;
+}
+.resultrank {
+    transform: translateY(-5%) translateX(-40%);
+    font-family: Univers-BlackExt;
+    font-size: 40px;
+    color: white;
+}
+.resultimg {
+    width: 100%;
+    margin-bottom: 10px;
+}
+.resultlike {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    color: white;
+}
+.resultborder {
+    border-bottom: 2px solid white;
+}
+.resultlike #resulttext {
+    font-size: 13px;
+}
+.resultbody {
+    background-color: white;
+}
+.resultcomment {
+    padding: 10px;
+    border-bottom: 1px solid black;
+}
+.resultlikelist {
+    display: flex;
+    flex-direction: row;
+    padding-top: 20px;
+}
+.resultlikelist img {
+    width: auto;
+    height: auto;
+    margin-left: 1px;
+    margin-right: 4px;
+    max-width: 24%;
+    max-height: 85px;
+}

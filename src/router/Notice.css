@@ -1,0 +1,30 @@
+.notice {
+    margin-top: 18px;
+    margin-left: 3px;
+}
+.noticeheader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 38%;
+    font-size: 27px;
+    margin-bottom: 20px;
+}
+.noticeblack {
+    border-bottom: 2px solid black;
+}
+.noticegrey {
+    cursor: pointer;
+    color: #A4A4A4;
+}
+.noticelogin {
+    font-size: 28px;
+}
+.noticelogin div {
+    margin: 10px auto;
+    padding-bottom: 10px;
+    border-bottom: 3px solid black;
+}
+.noticemessage {
+    
+}

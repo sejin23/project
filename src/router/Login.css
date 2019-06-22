@@ -1,0 +1,65 @@
+.login {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+.loginheader {
+    padding-left: 8px;
+    padding-top: 12px;
+    height: 48%;
+    font-size: 27px;
+    color: white;
+    background-color: black;
+}
+.loginbody {
+    text-align: center;
+    margin-right: 5px;
+}
+.logininput {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 15px auto;
+    padding-bottom: 5px;
+    width: 95%;
+    border-bottom: 3px solid black;
+}
+.logintext {
+    flex: 1px;
+    font-size: 24px;
+    border: none;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.loginbtn {
+    cursor: pointer;
+    display: inline-block;
+    margin: 15px;
+    font-size: 25px;
+    border-bottom: 2px solid black;
+}
+.loginsignup {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 5px;
+}
+.loginsignupbtn {
+    text-decoration: none;
+    color: black;
+}
+.login_up {
+    position: fixed;
+    top: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+}
+.imog {
+    width: 15px;
+    height: 15px;
+    margin: 5px;
+}

@@ -1,0 +1,28 @@
+.custommsg {
+    position: fixed;
+    background-color: white;
+    text-align: center;
+    border: 1px solid black;
+    left: 12%;
+    right: 12%;
+    top: 26%;
+    bottom: 26%;
+}
+.custommsg-main {
+    position: absolute;
+    width: 100%;
+    font-size: 28px;
+    left: 50%;
+    top: 40%;
+    transform: translateX(-50%);
+}
+.custommsg-btn {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    font-size: 25px;
+    bottom: 20px;
+    font-weight: 800;
+}

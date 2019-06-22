@@ -1,0 +1,191 @@
+.posting {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: white;
+}
+.postingpopup {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    top: 20%;
+    left: 10%;
+    right: 10%;
+    z-index: 3;
+    padding: 20px;
+    border: 1px solid black;
+    background-color: white;
+}
+.postingpopclose {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+.postingpopvote {
+    padding-top: 70px;
+    bottom: 20%;
+    font-size: 30px;
+}
+.postingpoplog {
+    padding-top: 80px;
+    bottom: 25%;
+    font-size: 30px;
+}
+.postingpoplike {
+    top: 15%;
+    bottom: 15%;
+    padding-top: 50px;
+    font-size: 28px;
+}
+.postingpoplike #smallmsg {
+    margin-top: 20px;
+    font-size: 25px;
+}
+.postingsmallimg {
+    max-height: 210px;
+    width: 100%;
+}
+.postinglogin {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 23px;
+}
+.postinglogin div {
+    margin: 10px;
+}
+.postingmain {
+    margin-bottom: 15px;
+}
+.postingmark {
+    position: absolute;
+    left: 12px;
+    transform: translateY(30%);
+    width: 50px;
+}
+.postingmsg {
+    margin-bottom: 15px;
+}
+.postingbetween {
+    border-top: 1px solid black;
+    padding-top: 15px;
+    padding-left: 8px;
+    padding-bottom: 10px;
+}
+.postingtime {
+    font-size: 12px;
+}
+.postingvote {
+    position: absolute;
+    right: 0;
+    z-index: 2;
+    transform: translateY(-120%);
+    border-radius: 50%;
+    border: 1px solid black;
+    text-align: center;
+    padding-top: 1px;
+    width: 90px;
+    height: 28px;
+}
+.postinginfo {
+    margin-top: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    display: flex;
+    flex-direction: row;
+}
+.postinginfolist {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+.postinginfolist b {
+    margin: 2px;
+}
+.postinginfotext {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.postingcomments {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.postingcomments #comments {
+    font-weight: bold;
+}
+.postinginput {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid black;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+.postinginput input {
+    width: 90%;
+    height: 90px;
+    border-radius: 20px;
+    border: none;
+    padding-left: 10px;
+    font-size: 20px;
+}
+.postinginput #images {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.postingsendmsg {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+.commentheader {
+    display: flex;
+    flex-direction: row;
+    margin-left: 10px;
+    margin-right: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+.commentheadericon {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80px;
+    height: 20px;
+}
+.commentheadericon #msgball {
+    transform: translateY(10%);
+}
+.commentline {
+    position: absolute;
+    left: 50%;
+    transform: translateY(-27%);
+    height: 47px;
+}
+.commentbody {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px solid black;
+    margin-bottom: 26px;
+    padding: 10px;
+}
+.commentbody #commenttext {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.commentdate {
+    font-size: 10px;
+    color: grey;
+}
