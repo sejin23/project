@@ -15,19 +15,18 @@
     margin-top: 10px;
     margin-left: 5px;
     margin-right: 5px;
-    overflow-y: scroll;
-    max-height: 514px;
+    margin-bottom: 40px;
 }
 .timelinepost {
     text-decoration: none;
     color: black;
 }
+.timelinehidden {
+    font-size: 10px;
+    color: white;
+}
 .timelinetitle {
     font-size: 35px;
-}
-.timelinehidden {
-    font-size: 35px;
-    color: white;
 }
 .timelineimages {
     display: flex;

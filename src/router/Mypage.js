@@ -42,12 +42,10 @@ class MypageMain extends Component {
                     <div className={choice? "":"mypagemain-grey"} onClick={()=>this.setState({choice: true})}>등록한 게시물</div>
                     <div className={(!choice)? "":"mypagemain-grey"} onClick={()=>this.setState({choice: false})}>참여한 게시물</div>
                 </div>
-                <div>
-                    {choice?
-                        <div className="mypageposting">{images.map((im, i) => <img key={i} src={im.imn} alt="mypost" onClick={()=>window.location.href=`/post/${im.pid}`}/>)}</div>:
-                        <div className="mypageposting">{related.map((im, i) => <img key={i} src={im.img} alt="relatedpost" onClick={()=>window.location.href=`/post/${im.pid}`}/>)}</div>
-                    }
-                </div>
+                {choice?
+                    <div className="mypageimages">{images.map((im, i) => <img key={i} className="mypageposting" src={im.imn} alt="mypost" onClick={()=>window.location.href=`/post/${im.pid}`}/>)}</div>:
+                    <div className="mypageimages">{related.map((im, i) => <img key={i} src={im.img} className="mypageposting" alt="relatedpost" onClick={()=>window.location.href=`/post/${im.pid}`}/>)}</div>
+                }
             </div>
         );
     }

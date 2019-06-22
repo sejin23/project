@@ -124,7 +124,7 @@ class Posting extends Component {
                             {data.map((el, i) => i === selectedNo? <img src={`http://${urls}:3000/api/auth/load/images?name=${el.image}`} className="postingsmallimg" key={i} alt='small'/>:null)}
                             <div id="smallmsg">왜 별로라고 생각했나요?</div>
                             <div className="postinginput">
-                                <input type="text" placeholder="의견을 남겨주세요 :)" value={scomments} onChange={(e)=>this.setState({scomments: e.target.value})}/>
+                                <textarea placeholder="의견을 남겨주세요 :)" value={scomments} onChange={(e)=>this.setState({scomments: e.target.value})}/>
                                 <div id="images">
                                     <img src={chooseimg} alt="choose" width="22px"/>
                                     <img src={addcomment} alt="plus"  width="22px" onClick={e=>this._onsubmitComments(e, true)}/>
@@ -141,10 +141,10 @@ class Posting extends Component {
                 <Swiper {...params} shouldSwiperUpdate>
                     {data.map((post, i) => <div key={i} className="postingmain">
                         {comment.some(cm => (cm.uid === uid && cm.aid === i && cm.voted)? true: false)? <img src={votedmark} alt="mark" className="postingmark"/>:null}
-                        <img src={`http://${urls}:3000/api/auth/load/images?name=${post.image}`} onClick={()=>this.setState({isnono: true, selectedNo: i})} key={i} className='plusimages' alt='postImg' />
+                        <img src={`http://${urls}:3000/api/auth/load/images?name=${post.image}`} onClick={()=>this.setState({isnono: true, selectedNo: i})} key={i} className='postingmainimgs' alt='postImg' />
                         <p></p>
                     </div>)}
-                </Swiper>
+            	</Swiper>
                 <div className="postingvote" onClick={()=>isvoted? window.location.href = `/result/${match.params.pid}`:this.setState({isclick: true})}>결과보기</div>
                 <div className="postingbetween">
                     <div className="postingmsg">{script}</div>
@@ -168,7 +168,7 @@ class Posting extends Component {
                 <div className="postingcomments">
                     <div id="comments">Comments({comment.length})</div>
                     <div className="postinginput">
-                        <input type="text" placeholder="의견을 남겨주세요 :)" value={bcomments} onChange={(e)=>this.setState({bcomments: e.target.value})}/>
+                        <textarea placeholder="의견을 남겨주세요 :)" value={bcomments} onChange={(e)=>this.setState({bcomments: e.target.value})}/>
                         <div id="images">
                             <img src={chooseimg} alt="choose" width="30px"/>
                             <img src={addcomment} alt="plus" width="30px" onClick={e=>this._onsubmitComments(e, false)}/>

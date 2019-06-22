@@ -63,11 +63,10 @@
     color: #A4A4A4;
 }
 .mypageposting {
-    max-height: 295px;
-    overflow-y: scroll;
-}
-.mypageposting img {
     margin: 5px;
     width: 47%;
     max-height: 185px;
+}
+.mypageimages {
+    margin-bottom: 40px;
 }
