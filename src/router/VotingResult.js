@@ -39,9 +39,9 @@ class VotingResult extends Component {
         return (
             <div className="result">
                 <div className="timelinehead">
-                    <img width="60px" height="60px" src={nono_reverse} alt="none" />
+                    <img width="60px" height="60px" src={nono_reverse} alt="none" onClick={()=>window.location.href='/'}/>
                     <div className="resulttitle" onClick={()=>window.location.href=`/post/${this.props.match.params.pid}`}>{title}</div>
-                    <img width="60px" height="60px" src={nono_inverse} alt="nono" />
+                    <img width="60px" height="60px" src={nono_inverse} alt="nono" onClick={()=>window.location.href='/'}/>
                 </div>
                 {pieces.map((pie, i) => <div key={i}>
                     <div className="resultbox">

@@ -28,7 +28,7 @@ class TimeLine extends Component {
                 <div className="timelinebody">
                     {posts.map((post, i) => <Link to={`/post/${post.pid}`} key={i} className="timelinepost">
                         {post.title? <div className="timelinetitle">{post.title}</div>: <div className="timelinehidden">title</div>}
-                        <div className="timelineimages">{post.images.map((image, id) => <img key={id} src={image[0]} alt="posts"/>)}</div>
+                        <div className="timelineimgs">{post.images.map((image, id) => <div key={id} className="timelinewrap"><img src={image[0]} alt="posts"/></div>)}</div>
                     </Link>)}
                 </div>
                 <PopupContainer />

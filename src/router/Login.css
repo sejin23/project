@@ -15,12 +15,10 @@
 }
 .loginbody {
     text-align: center;
-    margin-right: 5px;
 }
 .logininput {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     margin: 15px auto;
     padding-bottom: 5px;
@@ -28,11 +26,10 @@
     border-bottom: 3px solid black;
 }
 .logintext {
-    flex: 1px;
-    font-size: 24px;
+    width: 95%;
+    font-size: 20px;
     border: none;
-    margin-left: 5px;
-    margin-right: 5px;
+    font-family: Spoqa Han Sans;
 }
 .loginbtn {
     cursor: pointer;

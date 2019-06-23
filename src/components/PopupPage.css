@@ -9,34 +9,31 @@
     display: none;
 }
 .popbody {
-    position: absolute;
-    margin: auto;
-    text-align: center;
+    position: absolute; 
     background-color: black;
-    left: 10%;
-    right: 10%;
-    top: 8%;
-    bottom: 15%;
+    left: 15%;
+    right: 15%;
+    top: 14%;
+    height: 350px;
 }
 .popimg {
-    margin: auto;
-    margin-top: 40px;
-    margin-bottom: 20px;
-    width: 180px;
-    height: 180px;
+    display: flex;
+    justify-content: center;
+    margin: 30px auto;
+    width: 160px;
+    height: 160px;
 }
 .poptext {
     color: white;
     margin-left: 7%;
     margin-right: 7%;
 }
-.popfont40 {
-    font-size: 42px;
-}
 .popfont15 {
-    padding-top: 8px;
-    font-size: 13px;
-    margin-bottom: 20px
+    font-size: 18px;
+}
+.pophighlight {
+    text-decoration: underline;
+    text-underline-position: under;
 }
 .popborder {
     border-bottom: 3px solid white;

@@ -4,7 +4,6 @@ import BottomNavContainer from '../components/BottomNav';
 import moment from 'moment';
 import CustomMsg from '../components/CustomMsg';
 import setting from '../svg/setting.svg';
-import close from '../svg/x.svg';
 import emailicon from '../svg/email.svg';
 import pwicon from '../svg/pw.svg';
 import * as Auth from '../api/auth';
@@ -158,7 +157,7 @@ class Mypage extends Component {
             <div className="mypage">
                 <div className="mypageheader">
                     <div>Profile</div>
-                    <img src={main? setting: close} className="settingimg" alt="setting" onClick={()=>this.setState({main: !main})}/>
+                    {main? <img src={setting} className="settingimg" alt="setting" onClick={()=>this.setState({main: false})}/>: <div className="plusnext" onClick={()=>this.setState({main: true})}>저장</div>}
                 </div>
                 {main? <MypageMain univ={univ} depart={depart} age={age} images={images}/>: <MypageSetting univ={univ} depart={depart} age={age} email={email} pw={password} made={made}/>}
                 <BottomNavContainer />

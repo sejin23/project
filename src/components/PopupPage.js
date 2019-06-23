@@ -23,9 +23,9 @@ class PopupPage extends Component {
             <div className={popUp? 'popon': 'popoff'}>
                 <div className="popbody">
                     <img className="popimg" src={nono} alt="NONO"/>
-                    <div className="poptext popfont40">정답은 없지만</div>
-                    <div className="poptext popfont40 popborder">오답은 있다구</div>
-                    <div className="poptext popfont15">안녕 나는 노노(のの)입니다. 이건 아닌데,,, 싶은 시안에는 두 번 눌러 ㄴㄴ를 표하세요,,,</div>
+                    <div className="poptext popfont15">안녕 나는 노노(のの)입니다.</div>
+		    <div className="poptext popfont15"><u className="pophighlight">이건 좀 별로인 시안</u>에는</div>
+		    <div className="poptext popfont15">한 번 탭하여 ㄴㄴ를 표하세요!</div>
                     <div className="popclose">
                         <div className="popclosemsg">다신 보고 싶지 않다면</div>
                         <input type="checkbox" className="popcheck" onChange={e=>this.setState({checked: e.target.value})}/>

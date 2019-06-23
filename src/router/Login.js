@@ -62,7 +62,7 @@ class Login extends Component {
                     </div>
                     <div className="logininput">
                         <img src={pwicon} alt="pw" width="23px"/>
-                        <input type="password" className="logintext" name="password" placeholder="암호을 입력해주세요." value={password} onChange={this.onChange}/>
+                        <input type="password" className="logintext" name="password" placeholder="암호를 입력해주세요." value={password} onChange={this.onChange}/>
                         <IoMdCloseCircle size="13px" onClick={()=>this.setState({password: ''})}/>
                     </div>
                     <div className="loginbtn" onClick={this.onSubmit}>LOGIN</div>

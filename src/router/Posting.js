@@ -14,6 +14,7 @@ import mail from '../svg/mail.svg';
 import siren from '../svg/siren.svg';
 import heart from '../svg/heart.svg';
 import close from '../svg/x.svg';
+import modify from '../svg/modify.svg';
 import votedmark from '../svg/votedmark.gif';
 import * as urlinfo from '../api/urlinfo';
 import './Posting.css';
@@ -25,6 +26,8 @@ class Posting extends Component {
             isclick: false,
             isvoted: false,
             isnono: false,
+	    isowner: false,
+	    ismodified: false,
             selectedNo: 0,
             title: '',
             script: '',
@@ -47,6 +50,7 @@ class Posting extends Component {
                 if(res2.data) {
                     this.setState({
                         isvoted: res.data? res2.data.uid === res.data? true: res2.data.comment.some(cm => (cm.uid === res.data && cm.voted)? true: false): false,
+			isowner: res.data === res2.data.uid? true: false,
                         title: res2.data.title,
                         script: res2.data.script,
                         date: res2.data.date,
@@ -99,7 +103,7 @@ class Posting extends Component {
             },
             observer: true
         }
-        const { isclick, isvoted, isnono, selectedNo, title, script, date, uid, postinfo, scomments, bcomments, comment, data } = this.state;
+        const { isclick, isvoted, isnono, isowner, ismodified, selectedNo, title, script, date, uid, postinfo, scomments, bcomments, comment, data } = this.state;
         const { isLoginSuccess, match } = this.props;
         const urls = urlinfo.URL;
         return (
@@ -121,7 +125,7 @@ class Posting extends Component {
                     :isnono?
                         <div className="postingpopup postingpoplike">
                             <img src={close} width="23px" alt="close" className="postingpopclose" onClick={()=>this.setState({isnono: false})}/>
-                            {data.map((el, i) => i === selectedNo? <img src={`http://${urls}:3000/api/auth/load/images?name=${el.image}`} className="postingsmallimg" key={i} alt='small'/>:null)}
+                            {data.map((el, i) => i === selectedNo? <div key={i} className="postingsmallimg"><img src={`http://${urls}:3000/api/auth/load/images?name=${el.image}`} alt='small'/></div>:null)}
                             <div id="smallmsg">왜 별로라고 생각했나요?</div>
                             <div className="postinginput">
                                 <textarea placeholder="의견을 남겨주세요 :)" value={scomments} onChange={(e)=>this.setState({scomments: e.target.value})}/>
@@ -131,12 +135,12 @@ class Posting extends Component {
                                 </div>
                             </div>
                         </div>
-                        :null
+                        :isowner && ismodified? <div className="postingpopup postingmodify"><img src={close} className="postingpopclose" alt='close' width="23px" onClick={()=>this.setState({ismodified: false})}/><div>수정</div><div>삭제</div></div>: null
                 }
                 <div className="timelinehead">
-                    <img width="50px" height="50px" src={nono_reverse} alt="none" />
-                    <div onClick={()=>window.location.href='/'}>{title}</div>
-                    <img width="50px" height="50px" src={nono_inverse} alt="nono" />
+                    <img width="50px" height="50px" src={nono_reverse} alt="none" onClick={()=>window.location.href='/'}/>
+                    <div>{title}</div>
+                    <img width="50px" height="50px" src={nono_inverse} alt="nono" onClick={()=>window.location.href='/'}/>
                 </div>
                 <Swiper {...params} shouldSwiperUpdate>
                     {data.map((post, i) => <div key={i} className="postingmain">
@@ -148,7 +152,10 @@ class Posting extends Component {
                 <div className="postingvote" onClick={()=>isvoted? window.location.href = `/result/${match.params.pid}`:this.setState({isclick: true})}>결과보기</div>
                 <div className="postingbetween">
                     <div className="postingmsg">{script}</div>
-                    <div className="postingtime">{moment(date).format('YYYY.MM.DD hh:mm')}</div>
+                    <div className="postingtime">
+			<div>{moment(date).format('YYYY.MM.DD hh:mm')}</div>
+			<img src={modify} width="20px" alt="modified" onClick={()=>isowner? this.setState({ismodified: true}): null}/>
+		    </div>
                 </div>
                 <div className="postinginfo">
                     <div className="postinginfolist">

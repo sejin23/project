@@ -10,7 +10,6 @@
     position: fixed;
     display: flex;
     flex-direction: column;
-    top: 20%;
     left: 10%;
     right: 10%;
     z-index: 3;
@@ -24,32 +23,49 @@
     top: 15px;
 }
 .postingpopvote {
-    padding-top: 70px;
-    bottom: 20%;
+    padding-top: 60px;
+    top: 20%;
+    height: 380px;
     font-size: 30px;
 }
 .postingpoplog {
-    padding-top: 80px;
-    bottom: 25%;
+    padding-top: 60px;
+    top: 20%;
+    height: 340px;
     font-size: 30px;
 }
 .postingpoplike {
-    top: 15%;
-    bottom: 15%;
+    top: 14%;
+    height: 390px;
     padding-top: 50px;
     font-size: 28px;
+}
+.postingmodify {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    top: 25%;
+    height: 300px;
+    font-size: 30px;
 }
 .postingpoplike #smallmsg {
     margin-top: 20px;
     font-size: 25px;
 }
 .postingsmallimg {
-    max-height: 210px;
-    width: 100%;
+    height: 150px;
+}
+.postingsmallimg img {
+    display: block;
+    margin: auto;
+    width: auto;
+    max-width: 100%;
+    max-height: 100%;
 }
 .postinglogin {
     text-align: center;
-    margin-top: 30px;
+    margin-top: 15px;
     font-size: 23px;
 }
 .postinglogin div {
@@ -81,7 +97,10 @@
     padding-bottom: 10px;
 }
 .postingtime {
+    display: flex;
+    justify-content: space-between;
     font-size: 12px;
+    margin-right: 10px;
 }
 .postingvote {
     position: absolute;
@@ -135,7 +154,7 @@
     flex-direction: row;
     border: 1px solid black;
     border-radius: 20px;
-    margin-top: 20px;
+    margin-top: 15px;
 }
 .postinginput textarea {
     width: 90%;
