@@ -94,7 +94,7 @@ class Plus extends Component {
                                     <IoMdCloseCircle size='15px' className="mypage-iconleft" onClick={()=>this.setState({classes: ''})}/>
                                 </div>
                                 <div className="plusinfotext plusborderbottom">
-                                    <div className="plusinfotitle">Prof.</div>
+                                    <div className="plusinfotitle">PROF.</div>
                                     <input type='text' name='prof' value={prof} onChange={this.onChange}/>
                                     <IoMdCloseCircle size='15px' className="mypage-iconleft" onClick={()=>this.setState({prof: ''})}/>
                                 </div>

@@ -27,7 +27,7 @@ class Posting extends Component {
             isvoted: false,
             isnono: false,
 	    isowner: false,
-	    ismodified: false,
+	    ismodified: 0,
             selectedNo: 0,
             title: '',
             script: '',
@@ -135,7 +135,23 @@ class Posting extends Component {
                                 </div>
                             </div>
                         </div>
-                        :isowner && ismodified? <div className="postingpopup postingmodify"><img src={close} className="postingpopclose" alt='close' width="23px" onClick={()=>this.setState({ismodified: false})}/><div>수정</div><div>삭제</div></div>: null
+                        :isowner?
+			    ismodified === 1?
+				<div className="postingpopup postingmodify">
+				    <img src={close} className="postingpopclose" alt='close' width="23px" onClick={()=>this.setState({ismodified: 0})}/>
+					<div>수정</div>
+					<div onClick={()=>this.setState({ismodified: 2})}>삭제</div>
+				</div>:
+				ismodified === 2?
+				    <div className="postingpopup postingmodconf">
+					<div>삭제합니다?</div>
+					<div className="custommsg-btn">
+					    <div onClick={()=>this.setState({ismodified: 3})}>ㅇㅇ</div>
+					    <div onClick={()=>this.setState({ismodified: 1})}>ㄴㄴ</div>
+					</div>
+				    </div>:
+				    null:
+			    null
                 }
                 <div className="timelinehead">
                     <img width="50px" height="50px" src={nono_reverse} alt="none" onClick={()=>window.location.href='/'}/>
@@ -154,7 +170,7 @@ class Posting extends Component {
                     <div className="postingmsg">{script}</div>
                     <div className="postingtime">
 			<div>{moment(date).format('YYYY.MM.DD hh:mm')}</div>
-			<img src={modify} width="20px" alt="modified" onClick={()=>isowner? this.setState({ismodified: true}): null}/>
+			<img src={modify} width="20px" alt="modified" onClick={()=>isowner? this.setState({ismodified: 1}): null}/>
 		    </div>
                 </div>
                 <div className="postinginfo">
@@ -186,7 +202,7 @@ class Posting extends Component {
                     </div>
                     {comment.map((cm, i) => <div key={i}>
                         <div className="commentheader">
-                            <img src={process.env.PUBLIC_URL + `/emoticon/img_${cm.emoticon}.png`} width="75px" alt="random"/>
+                            <img src={process.env.PUBLIC_URL + `/emoticon/img_${cm.emoticon}.png`} height="16px" alt="random"/>
                             <div className="commentheadericon">
                                 <img src={msgball} id="msgball" width="13px" alt="msgball" />
                                 <img src={mail} width="15px" alt="mail" />
