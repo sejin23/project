@@ -42,7 +42,7 @@ class Notice extends Component {
                             {joinnum === 0? null: <div>최근 {joinnum}명이 회원님의 투표에 참여했습니다.</div>}
                         </div>
                         :<div className="noticemessage">
-                            
+			    받은 메세지가 없습니다.
                         </div>
                         :<div className="noticelogin" onClick={this.onStorePage}>로그인 후 이용해주세요.</div>
                     }

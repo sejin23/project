@@ -4,14 +4,6 @@ export const popup = () => ({
     type: types.POPUP,
 });
 
-export const delete_post = () => ({
-    type: types.DELETE_POST,
-});
-
-export const delete_exit = () => ({
-    type: types.DELETE_EXIT,
-});
-
 export const loginPending = (isLoginPending) => ({
     type: types.LOGIN_PENDING,
     isLoginPending

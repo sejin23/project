@@ -90,11 +90,16 @@
     transform: translateY(30%);
     width: 50px;
 }
+.postingimgframe {
+    display: flex;
+    justify-content: center;
+    height: 350px;
+}
 .postingmainimgs {
     display: block;
     margin: auto;
     max-width: 100%;
-    max-height: 350px;
+    max-height: 100%;
     object-fit: contain;
 }
 .postingmsg {
@@ -199,6 +204,9 @@
     justify-content: space-between;
     width: 80px;
     height: 20px;
+}
+.commentheadericon #msgdel {
+    transform: translateY(28%) translateX(10%);
 }
 .commentheadericon #msgball {
     transform: translateY(10%);

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import Swiper from 'react-id-swiper/lib/ReactIdSwiper.full';
 import { connect } from 'react-redux';
 import * as Auth from '../api/auth';
-import * as actions from '../actions';
 import moment from 'moment';
 import nono_inverse from '../svg/nono_inverse.svg';
 import nono_reverse from '../svg/nono_reverse.svg';
@@ -35,6 +34,7 @@ class Posting extends Component {
             script: '',
             date: '',
             uid: 0,
+	    selcm: {},
             postinfo: {},
             scomments: '',
             bcomments: '',
@@ -101,9 +101,19 @@ class Posting extends Component {
 	e.preventDefault();
 	Auth.deletepost({pid: this.props.match.params.pid}).then(res => {
 	    if(res.data) {
-            localStorage.setItem('delete', true);
-            window.location.href = '/';
-        }
+		localStorage.setItem('delete', true);
+		window.location.href = '/';
+	    }
+	});
+    }
+    _deletecomment = (e) => {
+	e.preventDefault();
+	const { uid, selcm } = this.state;
+	Auth.deletecomment({uid: uid, aid: selcm.aid, pid: this.props.match.params.pid, voted: selcm.voted}).then(res => {
+	    if(res.data) {
+		this.setState({selcm: {}});
+		window.location.reload();
+	    }
 	});
     }
     render() {
@@ -123,7 +133,7 @@ class Posting extends Component {
                     isLoginSuccess?
                         <div className="postingpopup postingpopvote">
                             <img src={close} width="23px" alt="close" className="postingpopclose" onClick={()=>this.setState({isclick: false})}/>
-                            투표 결과를 보려면 투표에 참여해야 해요! 이건 좀 별론데? 하는 시안을 두 번 눌러 のㄴㄴの를 표해보세요.
+                            투표 결과를 보려면 투표에 참여해야 해요! 이건 좀 별론데? 하는 시안을 한 번 눌러 のㄴㄴの를 표해보세요.
                         </div>
                         :<div className="postingpopup postingpoplog">
                             <img src={close} width="23px" alt="close" className="postingpopclose" onClick={()=>this.setState({isclick: false})}/>
@@ -147,22 +157,36 @@ class Posting extends Component {
                             </div>
                         </div>
                         :isowner?
-			    ismodified === 1 || ismodified === 3?
+			    ismodified === 1?
 				<div className="postingpopup postingmodify">
 				    <img src={close} className="postingpopclose" alt='close' width="23px" onClick={()=>this.setState({ismodified: 0})}/>
-					<div>수정</div>
-					<div onClick={()=>this.setState({ismodified: 2})}>삭제</div>
+				    <div>수정</div>
+				    <div onClick={()=>this.setState({ismodified: 2})}>삭제</div>
 				</div>:
-				ismodified === 2 || ismodified === 4?
+				ismodified === 2?
 				    <div className="postingpopup postingmodconf">
 					<div>삭제합니다?</div>
 					<div className="custommsg-btn">
 					    <div onClick={this._deletepost}>ㅇㅇ</div>
-					    <div onClick={()=>this.setState({ismodified: ismodified === 2? 1: 3})}>ㄴㄴ</div>
+					    <div onClick={()=>this.setState({ismodified: 1})}>ㄴㄴ</div>
 					</div>
 				    </div>:
 				    null:
-			    null
+			    ismodified === 3?
+				<div className="postingpopup postingmodify">
+				    <img src={close} className="postingpopclose" alt='close' width="23px" onClick={()=>this.setState({ismodified: 0})}/>
+				    <div>수정</div>
+				    <div onClick={()=>this.setState({ismodified: 4})}>삭제</div>
+				</div>:
+				ismodified === 4?
+				    <div className="postingpopup postingmodconf">
+					<div>삭제합니다?</div>
+					<div className="custommsg-btn">
+					    <div onClick={this._deletecomment}>ㅇㅇ</div>
+					    <div onClick={()=>this.setState({ismodified: 3})}>ㄴㄴ</div>
+					</div>
+				    </div>:
+				    null
                 }
                 <div className="timelinehead">
                     <img width="50px" height="50px" src={nono_reverse} alt="none" onClick={()=>window.location.href='/'}/>
@@ -172,7 +196,9 @@ class Posting extends Component {
                 <Swiper {...params} shouldSwiperUpdate>
                     {data.map((post, i) => <div key={i} className="postingmain">
                         {comment.some(cm => (cm.uid === uid && cm.aid === i && cm.voted)? true: false)? <img src={votedmark} alt="mark" className="postingmark"/>:null}
-                        <img src={`http://${urls}:3000/api/auth/load/images?name=${post.image}`} onClick={()=>this.setState({isnono: true, selectedNo: i})} key={i} className='postingmainimgs' alt='postImg' />
+                        <div className="postingimgframe">
+			    <img src={`http://${urls}:3000/api/auth/load/images?name=${post.image}`} onClick={()=>this.setState({isnono: true, selectedNo: i})} key={i} className='postingmainimgs' alt='postImg' />
+			</div>
                         <p></p>
                     </div>)}
             	</Swiper>
@@ -215,7 +241,7 @@ class Posting extends Component {
                         <div className="commentheader">
                             <img src={process.env.PUBLIC_URL + `/emoticon/img_${cm.emoticon}.png`} height="16px" alt="random"/>
                             <div className="commentheadericon">
-                                <img src={delcomment} width="13px" alt="delc" />
+                                <img src={delcomment} id="msgdel" width="13px" height="13px" alt="delc" onClick={() => uid === cm.uid? this.setState({selcm: cm, ismodified: 3}): null}/>
                                 <img src={msgball} id="msgball" width="13px" alt="msgball" />
                                 <img src={mail} width="15px" alt="mail" />
                                 <img src={siren} width="13px" alt="siren" />

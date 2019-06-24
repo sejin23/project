@@ -11,6 +11,12 @@
 .timelinehead div {
     font-size: 30px;
 }
+.timeline_delete {
+    position: fixed;
+    top: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+}
 .timelinebody {
     margin-top: 10px;
     margin-left: 5px;

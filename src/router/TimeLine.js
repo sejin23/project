@@ -5,6 +5,7 @@ import PopupContainer from '../containers/PopupContainer';
 import BottomNavContainer from '../components/BottomNav';
 import nono_inverse from '../svg/nono_inverse.svg';
 import nono_reverse from '../svg/nono_reverse.svg';
+import delete_complete from '../svg/delete_complete.svg';
 import './TimeLine.css';
 
 class TimeLine extends Component {
@@ -21,11 +22,16 @@ class TimeLine extends Component {
         const delCom = localStorage.getItem('delete');
         if(delCom) this.setState({deletecom: true});
     }
+    _popexit = (e) => {
+	e.preventDefault();
+	localStorage.removeItem('delete');
+	this.setState({deletecom: false});
+    }
     render() {
         const { posts, deletecom } = this.state;
         return (
             <div>
-                {deletecom? <div>Hello</div>: null}
+                {deletecom? <div className="timeline_delete"><img src={delete_complete} width="150px" alt="delete" onClick={this._popexit}/></div>: null}
                 <div className="timelinehead">
                     <img width="50px" height="50px" src={nono_reverse} alt="none" />
                     <img width="50px" height="50px" src={nono_inverse} alt="nono" />
