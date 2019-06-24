@@ -95,6 +95,12 @@ class Posting extends Component {
         localStorage.setItem('prev', `/post/${this.props.match.params.pid}`);
         window.location.href = link;
     }
+    _deletepost = (e) => {
+	e.preventDefault();
+	Auth.deletepost({pid: this.props.match.params.pid}).then(res => {
+	    if(res.data) window.location.href = '/';
+	});
+    }
     render() {
         const params = {
             pagination: {
@@ -136,18 +142,18 @@ class Posting extends Component {
                             </div>
                         </div>
                         :isowner?
-			    ismodified === 1?
+			    ismodified === 1 || ismodified === 3?
 				<div className="postingpopup postingmodify">
 				    <img src={close} className="postingpopclose" alt='close' width="23px" onClick={()=>this.setState({ismodified: 0})}/>
 					<div>수정</div>
 					<div onClick={()=>this.setState({ismodified: 2})}>삭제</div>
 				</div>:
-				ismodified === 2?
+				ismodified === 2 || ismodified === 4?
 				    <div className="postingpopup postingmodconf">
 					<div>삭제합니다?</div>
 					<div className="custommsg-btn">
-					    <div onClick={()=>this.setState({ismodified: 3})}>ㅇㅇ</div>
-					    <div onClick={()=>this.setState({ismodified: 1})}>ㄴㄴ</div>
+					    <div onClick={this._deletepost}>ㅇㅇ</div>
+					    <div onClick={()=>this.setState({ismodified: ismodified === 2? 1: 3})}>ㄴㄴ</div>
 					</div>
 				    </div>:
 				    null:
