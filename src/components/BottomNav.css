@@ -4,10 +4,9 @@
     height: 40px;
     bottom: 0;
     left: 0;
-    padding-left: 2px;
-    padding-right: 2px;
+    padding-left: 5px;
     display: flex;
-    flex-direction: center;
+    justify-content: space-between;
     align-items: center;
     background-color: white;
     z-index: 1;
