@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import * as Auth from '../api/auth';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import PopupContainer from '../containers/PopupContainer';
 import BottomNavContainer from '../components/BottomNav';
 import nono_inverse from '../svg/nono_inverse.svg';
@@ -18,10 +20,12 @@ class TimeLine extends Component {
         });
     }
     render() {
+	const { delete_com } = this.props;
         const { posts } = this.state;
         return (
             <div>
-                <div className="timelinehead">
+                {delete_com? <div>Hello</div>: null}
+		<div className="timelinehead">
                     <img width="50px" height="50px" src={nono_reverse} alt="none" />
                     <img width="50px" height="50px" src={nono_inverse} alt="nono" />
                 </div>
@@ -38,4 +42,20 @@ class TimeLine extends Component {
     }
 }
 
-export default TimeLine;
+TimeLine.propTypes = {
+    delete_com: PropTypes.bool
+}
+
+TimeLine.defaultProps = {
+    delete_com: false
+}
+
+const mapStateToProps = (state) => ({
+    delete_com: state.popUp.delete_com,
+});
+
+const TimeLineContainer = connect(
+    mapStateToProps,
+)(TimeLine);
+
+export default TimeLineContainer;

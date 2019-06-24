@@ -2,7 +2,8 @@ import { combineReducers } from 'redux';
 import * as types from '../actions/ActionTypes';
 
 function popUpReducer(state = {
-    popUp: true
+    popUp: true,
+    delete_com: false,
 }, action) {
     switch(action.type) {
         case types.POPUP:
@@ -10,6 +11,16 @@ function popUpReducer(state = {
                 ...state,
                 popUp: false
             };
+	case types.DELETE_POST:
+	    return {
+		...state,
+		delete_com: true,
+	    };
+	case types.DELETE_EXIT:
+	    return {
+		...state,
+		delete_com: false,
+	    };
         default:
             return state;
     }
