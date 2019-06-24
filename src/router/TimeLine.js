@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 import * as Auth from '../api/auth';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
 import PopupContainer from '../containers/PopupContainer';
 import BottomNavContainer from '../components/BottomNav';
 import nono_inverse from '../svg/nono_inverse.svg';
@@ -12,20 +10,23 @@ import './TimeLine.css';
 class TimeLine extends Component {
     state = {
         posts: [],
+        deletecom: false,
     }
     componentDidMount() {
         const { posts } = this.state;
         Auth.showPosting().then(res => {
             if(res.data) this.setState({posts: posts.concat(res.data)});
         });
+
+        const delCom = localStorage.getItem('delete');
+        if(delCom) this.setState({deletecom: true});
     }
     render() {
-	const { delete_com } = this.props;
-        const { posts } = this.state;
+        const { posts, deletecom } = this.state;
         return (
             <div>
-                {delete_com? <div>Hello</div>: null}
-		<div className="timelinehead">
+                {deletecom? <div>Hello</div>: null}
+                <div className="timelinehead">
                     <img width="50px" height="50px" src={nono_reverse} alt="none" />
                     <img width="50px" height="50px" src={nono_inverse} alt="nono" />
                 </div>
@@ -42,20 +43,4 @@ class TimeLine extends Component {
     }
 }
 
-TimeLine.propTypes = {
-    delete_com: PropTypes.bool
-}
-
-TimeLine.defaultProps = {
-    delete_com: false
-}
-
-const mapStateToProps = (state) => ({
-    delete_com: state.popUp.delete_com,
-});
-
-const TimeLineContainer = connect(
-    mapStateToProps,
-)(TimeLine);
-
-export default TimeLineContainer;
+export default TimeLine;

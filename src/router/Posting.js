@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Swiper from 'react-id-swiper/lib/ReactIdSwiper.full';
 import { connect } from 'react-redux';
 import * as Auth from '../api/auth';
+import * as actions from '../actions';
 import moment from 'moment';
 import nono_inverse from '../svg/nono_inverse.svg';
 import nono_reverse from '../svg/nono_reverse.svg';
@@ -15,7 +16,7 @@ import siren from '../svg/siren.svg';
 import heart from '../svg/heart.svg';
 import close from '../svg/x.svg';
 import modify from '../svg/modify.svg';
-import delcomment from '../svg/delete_comment.svg';
+import delcomment from '../svg/delete_comment.png';
 import votedmark from '../svg/votedmark.gif';
 import * as urlinfo from '../api/urlinfo';
 import './Posting.css';
@@ -99,7 +100,10 @@ class Posting extends Component {
     _deletepost = (e) => {
 	e.preventDefault();
 	Auth.deletepost({pid: this.props.match.params.pid}).then(res => {
-	    if(res.data) window.location.href = '/';
+	    if(res.data) {
+            localStorage.setItem('delete', true);
+            window.location.href = '/';
+        }
 	});
     }
     render() {
@@ -233,11 +237,11 @@ class Posting extends Component {
 }
 
 Posting.propTypes = {
-    isLoginSuccess: PropTypes.bool,
+    isLoginSuccess: PropTypes.bool
 }
 
 Posting.defaultProps = {
-    isLoginSuccess: false,
+    isLoginSuccess: false
 }
 
 const mapStateToProps = (state) => ({
