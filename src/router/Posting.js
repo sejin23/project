@@ -15,6 +15,7 @@ import siren from '../svg/siren.svg';
 import heart from '../svg/heart.svg';
 import close from '../svg/x.svg';
 import modify from '../svg/modify.svg';
+import delcomment from '../svg/delete_comment.svg';
 import votedmark from '../svg/votedmark.gif';
 import * as urlinfo from '../api/urlinfo';
 import './Posting.css';
@@ -210,6 +211,7 @@ class Posting extends Component {
                         <div className="commentheader">
                             <img src={process.env.PUBLIC_URL + `/emoticon/img_${cm.emoticon}.png`} height="16px" alt="random"/>
                             <div className="commentheadericon">
+                                <img src={delcomment} width="13px" alt="delc" />
                                 <img src={msgball} id="msgball" width="13px" alt="msgball" />
                                 <img src={mail} width="15px" alt="mail" />
                                 <img src={siren} width="13px" alt="siren" />
