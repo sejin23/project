@@ -108,8 +108,8 @@ class Posting extends Component {
     }
     _deletecomment = (e) => {
 	e.preventDefault();
-	const { uid, selcm } = this.state;
-	Auth.deletecomment({uid: uid, aid: selcm.aid, pid: this.props.match.params.pid, voted: selcm.voted}).then(res => {
+	const { selcm } = this.state;
+	Auth.deletecomment({wid: selcm.wid, aid: selcm.aid, pid: this.props.match.params.pid, voted: selcm.voted}).then(res => {
 	    if(res.data) {
 		this.setState({selcm: {}});
 		window.location.reload();
@@ -171,22 +171,21 @@ class Posting extends Component {
 					    <div onClick={()=>this.setState({ismodified: 1})}>ㄴㄴ</div>
 					</div>
 				    </div>:
-				    null:
-			    ismodified === 3?
-				<div className="postingpopup postingmodify">
-				    <img src={close} className="postingpopclose" alt='close' width="23px" onClick={()=>this.setState({ismodified: 0})}/>
-				    <div>수정</div>
-				    <div onClick={()=>this.setState({ismodified: 4})}>삭제</div>
-				</div>:
-				ismodified === 4?
-				    <div className="postingpopup postingmodconf">
-					<div>삭제합니다?</div>
-					<div className="custommsg-btn">
-					    <div onClick={this._deletecomment}>ㅇㅇ</div>
-					    <div onClick={()=>this.setState({ismodified: 3})}>ㄴㄴ</div>
-					</div>
-				    </div>:
-				    null
+				    ismodified === 3?
+					<div className="postingpopup postingmodify">
+					    <img src={close} className="postingpopclose" alt='close' width="23px" onClick={()=>this.setState({ismodified: 0})}/>
+					    <div>수정</div>
+					    <div onClick={()=>this.setState({ismodified: 4})}>삭제</div>
+					</div>:
+					ismodified === 4?
+					    <div className="postingpopup postingmodconf">
+						<div>삭제합니다?</div>
+						<div className="custommsg-btn">
+						    <div onClick={this._deletecomment}>ㅇㅇ</div>
+						    <div onClick={()=>this.setState({ismodified: 3})}>ㄴㄴ</div>
+						 </div>
+				    	    </div>:
+					    null: null
                 }
                 <div className="timelinehead">
                     <img width="50px" height="50px" src={nono_reverse} alt="none" onClick={()=>window.location.href='/'}/>

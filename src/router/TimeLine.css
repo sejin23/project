@@ -10,6 +10,9 @@
 }
 .timelinehead div {
     font-size: 30px;
+    margin-top: 8px;
+    line-height: 40px;
+    text-align: center;
 }
 .timeline_delete {
     position: fixed;
@@ -33,6 +36,8 @@
 }
 .timelinetitle {
     font-size: 35px;
+    margin-top: 10px;
+    line-height: 45px;
 }
 .timelineimgs {
     display: flex;

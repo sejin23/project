@@ -19,5 +19,5 @@ export const aPosting = ({pid}) => axios.get(`/api/auth/load/posting?pid=${pid}`
 export const resultlikes = ({pid}) => axios.get(`/api/auth/load/result?pid=${pid}`)
 export const getlikelist = ({uid, pid}) => axios.post('/api/auth/load/likelist', {uid: uid, pid: pid})
 
-export const deletecomment = ({uid, aid, pid, voted}) => axios.post('/api/auth/delet/comment', {uid: uid, aid: aid, pid: pid, voted: voted})
+export const deletecomment = ({wid, aid, pid, voted}) => axios.post('/api/auth/delet/comment', {wid: wid, aid: aid, pid: pid, voted: voted})
 export const deletepost = ({pid}) => axios.get(`/api/auth/delet/post?pid=${pid}`)
