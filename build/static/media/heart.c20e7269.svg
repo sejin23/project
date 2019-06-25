@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="35.702" height="32.479" viewBox="0 0 35.702 32.479">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #000;
+        stroke-width: 3px;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <g id="그룹_26" data-name="그룹 26" transform="translate(-315.5 -463.5)">
+    <path id="Heart" class="cls-1" d="M30.113,2.639a8.787,8.787,0,0,0-12.507,0l-1.23,1.23-1.23-1.23A8.844,8.844,0,0,0,2.639,15.146L16.376,28.883,30.113,15.146a8.787,8.787,0,0,0,0-12.507" transform="translate(316.975 464.975)"/>
+  </g>
+</svg>

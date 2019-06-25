@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="47.544" height="47.544" viewBox="0 0 47.544 47.544">
+  <defs>
+    <style>
+      .cls-1, .cls-3 {
+        fill: none;
+      }
+
+      .cls-1 {
+        stroke: #fff;
+        stroke-width: 3px;
+      }
+
+      .cls-2 {
+        stroke: none;
+      }
+    </style>
+  </defs>
+  <g id="그룹_47" data-name="그룹 47" transform="translate(1871.772 -496.228) rotate(90)">
+    <g id="사각형_2" data-name="사각형 2" class="cls-1" transform="translate(496.228 1824.228)">
+      <rect class="cls-2" width="47.544" height="47.544" rx="2"/>
+      <rect class="cls-3" x="1.5" y="1.5" width="44.544" height="44.544" rx="0.5"/>
+    </g>
+    <g id="그룹_48" data-name="그룹 48" transform="translate(489.443 1847.778) rotate(-45)">
+      <path id="패스_2" data-name="패스 2" class="cls-1" d="M0,0V42.9" transform="translate(21.743 0)"/>
+      <path id="패스_3" data-name="패스 3" class="cls-1" d="M0,0V42.9" transform="translate(42.9 21.743) rotate(90)"/>
+    </g>
+  </g>
+</svg>
